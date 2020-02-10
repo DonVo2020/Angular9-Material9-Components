@@ -1,0 +1,149 @@
+<form *ngIf="formFields" [formGroup]="formFields" novalidate (ngSubmit)="onSubmit()">
+  <button mat-raised-button color="basic" [routerLink]="['/']">
+    <mat-icon>arrow_back</mat-icon>Back
+  </button>
+  <mat-card class="customer-card">
+    <mat-card-header>
+      <mat-card-title>Customer Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="First Name" formControlName="firstName">
+            <mat-error *ngIf="formFields.controls['firstName'].hasError('required')">
+              First Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Middle Name" formControlName="middleName">
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Last Name" formControlName="lastName">
+            <mat-error *ngIf="formFields.controls['lastName'].hasError('required')">
+              Last Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Address" formControlName="address"></textarea>
+            <mat-error *ngIf="formFields.controls['address'].hasError('required')">
+              Address is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Address2" formControlName="address2"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Phone" formControlName="phone">
+            <mat-error *ngIf="formFields.controls['phone'].hasError('required')">
+              Phone is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Email Address" formControlName="emailAddress">
+            <mat-error *ngIf="formFields.controls['emailAddress'].hasError('required')">
+              Email Address is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput [matDatepicker]="pickerBirthDate" placeholder="Date of Birth" formControlName="birthDate"
+                   (dateChange)="date($event)">
+            <mat-datepicker-toggle matSuffix [for]="pickerBirthDate"></mat-datepicker-toggle>
+            <mat-datepicker #pickerBirthDate></mat-datepicker>
+            <mat-error *ngIf="formFields.controls['birthDate'].hasError('required')">
+              Birth Date is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">           
+            <mat-radio-group class="full-width" aria-label="Select an option" formControlName="gender">
+              <input matInput placeholder="Gender" formControlName="gender">
+              <mat-radio-button value="M">Male</mat-radio-button>
+              <mat-radio-button value="F">Female</mat-radio-button>
+              <mat-radio-button value="O">Other</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Marital Status" formControlName="maritalStatus">
+              <mat-option *ngFor="let materialstatus of materialstatuses" [value]="materialstatus.abbreviation">
+                {{ materialstatus.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="formFields.controls['maritalStatus'].hasError('required')">
+              Marital Status is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Education" formControlName="education">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Occupation" formControlName="occupation">
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Yearly Income" formControlName="yearlyIncome">
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Total Children" formControlName="totalChildren">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Number Cars Owned" formControlName="numberCarsOwned">
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput [matDatepicker]="pickerFirstPurchaseDate" placeholder="Date First Purchase" formControlName="dateFirstPurchase"
+                   (dateChange)="date($event)">
+            <mat-datepicker-toggle matSuffix [for]="pickerFirstPurchaseDate"></mat-datepicker-toggle>
+            <mat-datepicker #pickerFirstPurchaseDate></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-checkbox class="full-width">
+            <input matInput placeholder=" House Owner?" formControlName="houseOwnerFlag">
+          </mat-checkbox>
+          <!--<mat-form-field class="full-width">
+            <input matInput placeholder="House Owner ?" formControlName="houseOwnerFlag">
+          </mat-form-field>-->
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

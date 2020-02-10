@@ -12,4 +12,7 @@ export class HomeComponent {
   showFileUpload() {
     this.router.navigate(["file-upload"]);
   }
+  showFormFields() {
+    this.router.navigate(["form-fields"]);
+  }
 }
