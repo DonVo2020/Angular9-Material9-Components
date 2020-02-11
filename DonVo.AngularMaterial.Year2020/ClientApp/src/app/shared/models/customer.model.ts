@@ -2,8 +2,8 @@ export class CustomerModel {
   customerKey: number;
   firstName: string;
   lastName: string;
-  address: string;
-  address2: string;
+  addressLine1: string;
+  addressLine2: string;
   middleName: string;
   phone: string;
   gender: string;

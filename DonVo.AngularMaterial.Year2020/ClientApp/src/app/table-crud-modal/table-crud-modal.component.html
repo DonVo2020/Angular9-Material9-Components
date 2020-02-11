@@ -1,0 +1,100 @@
+<div class="table-container">
+  <button mat-raised-button color="basic" [routerLink]="['/']">
+    <mat-icon>arrow_back</mat-icon>Back
+  </button>
+  <h4>List of Customers</h4>
+  <div class="filter-container">
+    <div class="create-btn-container">
+      <button mat-raised-button type="button" color="primary" (click)="create()">
+        <mat-icon>add</mat-icon>
+        Create Customer
+      </button>
+    </div>
+    <mat-form-field>
+      <input [(ngModel)]="value" matInput (input)="applyFilter($event.target.value)" placeholder="Filter"
+             (keydown.escape)="clear()">
+      <button *ngIf="value" mat-button matSuffix mat-icon-button (click)="clear()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <div class="row-counter">Rows: {{rowCount()}}</div>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="customerKey">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{element.customerKey}}</div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>FirstName</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{element.firstName}}</div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>LastName</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{element.lastName}}</div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{element.phone}}</div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="emailAddress">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{element.emailAddress}}</div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="birthDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>BirthDate</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{element.birthDate}}</div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Gender</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{element.gender}}</div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="maritalStatus">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>MaritalStatus</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{element.maritalStatus}}</div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="education">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Education</th>
+      <td mat-cell *matCellDef="let element">
+        <div>{{element.education}}</div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <div class="action-btn-container">
+          <button mat-button mat-icon-button color="primary" (click)="editRow(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-button mat-icon-button color="warn" (click)="deleteRow(element.customerKey)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator #paginator
+                 [length]="dataSource.data.length"
+                 [pageIndex]="0"
+                 [pageSize]="10"
+                 [pageSizeOptions]="[10,25, 50, 100, 250]">
+  </mat-paginator>
+</div>

@@ -15,4 +15,10 @@ export class HomeComponent {
   showFormFields() {
     this.router.navigate(["form-fields"]);
   }
+  showTableCrudModal() {
+    this.router.navigate(["table-crud-modal"]);
+  }
+  showTableDetailsDrilldown() {
+    this.router.navigate(["table-details-drilldown"]);
+  }
 }

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -17,6 +17,8 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FormFieldsComponent } from './form-fields/form-fields.component';
+import { TableCrudModalComponent } from './table-crud-modal/table-crud-modal.component';
+import { CreateUpdateCustomerComponent } from './table-crud-modal/create-update-table-crud-modal/create-update-table-crud-modal.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { FormFieldsComponent } from './form-fields/form-fields.component';
     HomeComponent,
     FileUploadComponent,
     FormFieldsComponent,
+    TableCrudModalComponent,
+    CreateUpdateCustomerComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -44,6 +48,7 @@ import { FormFieldsComponent } from './form-fields/form-fields.component';
     NgxFileDropModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
