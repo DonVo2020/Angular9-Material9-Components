@@ -19,6 +19,9 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FormFieldsComponent } from './form-fields/form-fields.component';
 import { TableCrudModalComponent } from './table-crud-modal/table-crud-modal.component';
 import { CreateUpdateCustomerComponent } from './table-crud-modal/create-update-table-crud-modal/create-update-table-crud-modal.component';
+import { TableDetailsDrilldownComponent } from './table-details-drilldown/table-details-drilldown.component';
+import { CreateUpdateTableDetailsDrilldownComponent } from './table-details-drilldown/create-update-table-details-drilldown/create-update-table-details-drilldown.component';
+import { TreeDynamicDataComponent } from './tree-dynamic-data/tree-dynamic-data.component';
 
 
 @NgModule({
@@ -30,6 +33,9 @@ import { CreateUpdateCustomerComponent } from './table-crud-modal/create-update-
     FormFieldsComponent,
     TableCrudModalComponent,
     CreateUpdateCustomerComponent,
+    TableDetailsDrilldownComponent,
+    CreateUpdateTableDetailsDrilldownComponent,
+    TreeDynamicDataComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -21,4 +21,7 @@ export class HomeComponent {
   showTableDetailsDrilldown() {
     this.router.navigate(["table-details-drilldown"]);
   }
+  showTreeDynamicData() {
+    this.router.navigate(["tree-dynamic-data"]);
+  }
 }
