@@ -18,10 +18,10 @@ export class HomeComponent {
   showTableCrudModal() {
     this.router.navigate(["table-crud-modal"]);
   }
-  showTableDetailsDrilldown() {
-    this.router.navigate(["table-details-drilldown"]);
-  }
   showTreeDynamicData() {
     this.router.navigate(["tree-dynamic-data"]);
+  }
+  showStepperWizard() {
+    this.router.navigate(["stepper-wizard"]);
   }
 }

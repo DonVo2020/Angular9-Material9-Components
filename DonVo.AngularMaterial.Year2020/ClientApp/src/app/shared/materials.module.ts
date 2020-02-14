@@ -16,6 +16,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatStepperModule } from '@angular/material/stepper';
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   declarations: [],
@@ -36,6 +38,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatPaginatorModule,
     MatTreeModule,
     MatProgressBarModule,
+    MatStepperModule,
+    MatSliderModule,
   ],
   exports: [
     MatButtonModule,
@@ -54,6 +58,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatPaginatorModule,
     MatTreeModule,
     MatProgressBarModule,
+    MatStepperModule,
+    MatSliderModule,
   ],
   providers: [],
 })

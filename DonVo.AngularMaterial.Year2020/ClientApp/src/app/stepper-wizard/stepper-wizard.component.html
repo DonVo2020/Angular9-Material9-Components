@@ -1,0 +1,209 @@
+<button mat-raised-button color="basic" [routerLink]="['/']">
+  <mat-icon>arrow_back</mat-icon>Back
+</button>
+&nbsp;
+<button mat-raised-button color="primary" (click)="isEditable = !isEditable">
+  {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
+</button>
+<br />
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+    <form [formGroup]="firstFormGroup" (ngSubmit)="basicInfoForm()" #formone="ngForm">
+      <ng-template matStepLabel>Fill out basic information</ng-template>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="First Name" formControlName="firstName" required>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Middle Name" formControlName="middleName">
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Last Name" formControlName="lastName" required>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Email Address" formControlName="emailAddress" required>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Phone Number" formControlName="phone" required>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Company Name" formControlName="company">
+          </mat-form-field>
+        </div>
+      </div>
+      <div>
+        <button mat-raised-button color="accent" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+    <form [formGroup]="secondFormGroup" (ngSubmit)="addressForm()" #formtwo="ngForm">
+      <ng-template matStepLabel>Fill out your address</ng-template>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Address Line 1" formControlName="address1" required>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Address Line 2" formControlName="address2">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Address Line 3" formControlName="address3">
+          </mat-form-field>
+        </div>
+      </div>
+      <div>
+        <button mat-raised-button color="basic" matStepperPrevious>Back</button>
+        &nbsp;
+        <button mat-raised-button color="accent" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup" [editable]="isEditable">
+    <form [formGroup]="thirdFormGroup" (ngSubmit)="additionalInfoForm()" #formthree="ngForm">
+      <ng-template matStepLabel>Fill out additional information</ng-template>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput [matDatepicker]="pickerBirthDate" placeholder="Date of Birth" formControlName="birthDate" required>
+            <mat-datepicker-toggle matSuffix [for]="pickerBirthDate"></mat-datepicker-toggle>
+            <mat-datepicker #pickerBirthDate></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-radio-group class="full-width" aria-label="Select an option" formControlName="gender">
+            <input matInput placeholder="Gender">
+            <mat-radio-button value="M">Male</mat-radio-button>
+            <mat-radio-button value="F">Female</mat-radio-button>
+            <mat-radio-button value="O">Other</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Marital Status" formControlName="maritalStatus">
+              <mat-option *ngFor="let materialstatus of materialstatuses" [value]="materialstatus.abbreviation">
+                {{ materialstatus.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Education" formControlName="education">
+              <mat-option *ngFor="let education of educations" [value]="education.name">
+                {{ education.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Occupation" formControlName="occupation">
+              <mat-option *ngFor="let occupation of occupations" [value]="occupation.name">
+                {{ occupation.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput [matDatepicker]="pickerFirstPurchaseDate" placeholder="Date First Purchase" formControlName="dateFirstPurchase">
+            <mat-datepicker-toggle matSuffix [for]="pickerFirstPurchaseDate"></mat-datepicker-toggle>
+            <mat-datepicker #pickerFirstPurchaseDate></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          Yearly Income in Thousand Dollar
+          <mat-slider class="full-width"
+                      [attr.disabled]="true"
+                      [invert]="invert"
+                      [max]="max"
+                      [min]="min"
+                      [step]="step"
+                      [thumbLabel]="thumbLabel"
+                      formControlName="yearlyIncome"
+                      [vertical]="vertical">
+          </mat-slider>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Total Children" formControlName="totalChildren">
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Number Cars Owned" formControlName="numberCarsOwned">
+          </mat-form-field>
+        </div>
+        <div class="col">
+          House Owner?
+          <mat-checkbox class="full-width" (change)="checkCheckBoxValue($event)" [checked]="isChecked">
+            <input matInput>
+          </mat-checkbox>
+        </div>
+      </div>
+      <div>
+        <button mat-raised-button color="accent" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Review and Commit</ng-template>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Here is a copy of the information you have entered:</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <pre>
+        <b>Full Name: </b>{{this.firstFormGroup.value.firstName + ' ' + this.firstFormGroup.value.lastName}}
+        <b>Email Address: </b>{{this.firstFormGroup.value.emailAddress}}
+        <b>Phone Number: </b>{{this.firstFormGroup.value.phone}}        
+        <b>Company Name: </b>{{this.firstFormGroup.value.company}}
+        <b>Address 1: </b>{{this.secondFormGroup.value.address1}}
+        <b>Address 2: </b>{{this.secondFormGroup.value.address2}}            
+        <b>Birth Date: </b>{{this.thirdFormGroup.value.birthDate}}
+        <b>Gender: </b>{{this.thirdFormGroup.value.gender}}
+        <b>Material Status: </b>{{this.thirdFormGroup.value.maritalStatus}}
+        <b>Education: </b>{{this.thirdFormGroup.value.education}}
+        <b>Occupation: </b>{{this.thirdFormGroup.value.occupation}}
+        <b>First Purchase Date: </b>{{this.thirdFormGroup.value.dateFirstPurchase}}
+        <b>Yearly Income: </b>{{this.thirdFormGroup.value.yearlyIncome}}K
+        <b> House Owner?: </b>{{this.thirdFormGroup.value.isChecked}}
+        </pre>
+      </mat-card-content>
+    </mat-card>
+    <br />
+    <div>
+      <button mat-raised-button color="basic" matStepperPrevious>Back</button>
+      &nbsp;
+      <button mat-raised-button color="primary" (click)="stepper.reset()">Reset</button>
+      &nbsp;
+      <button mat-raised-button color="warn" (click)="submit();formone.ngSubmit.emit();formtwo.ngSubmit.emit();formthree.ngSubmit.emit()">Submit</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
