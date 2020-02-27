@@ -1,0 +1,35 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form, $event)">
+  <button mat-raised-button color="basic" [routerLink]="['/']">
+    <mat-icon>arrow_back</mat-icon>Back
+  </button>
+  <br />
+  <mat-card class="registerForm">
+    <mat-card-header>
+      <mat-card-title>Sign Up: </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput type="text" placeholder="Name" formControlName="name">
+      </mat-form-field>
+      <br />
+      <mat-form-field class="full-width">
+        <input matInput type="text" placeholder="Email" formControlName="email">
+        <!-- <mat-hint align="end">Hint</mat-hint> -->
+      </mat-form-field>
+      <br />
+      <mat-form-field class="full-width">
+        <input matInput type="text" placeholder="Password" formControlName="password">
+      </mat-form-field>
+      <br />
+      <mat-form-field class="full-width">
+        <input matInput type="text" placeholder="Re-enter Password" formControlName="confirmPassword">
+      </mat-form-field>
+      <br />
+      <button mat-raised-button color="primary" type="submit">Sign Up</button>
+    </mat-card-content>
+    <mat-card-actions class="text-right">
+      <p>Already had an account? <a href="/login">Log In</a></p>
+      <p>Forget password? <a href="">Get New Password</a></p>
+    </mat-card-actions>
+  </mat-card>
+</form>

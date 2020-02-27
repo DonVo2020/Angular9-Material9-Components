@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialsModule } from './shared/materials.module';
@@ -21,7 +21,8 @@ import { TableCrudModalComponent } from './table-crud-modal/table-crud-modal.com
 import { CreateUpdateCustomerComponent } from './table-crud-modal/create-update-table-crud-modal/create-update-table-crud-modal.component';
 import { TreeDynamicDataComponent } from './tree-dynamic-data/tree-dynamic-data.component';
 import { StepperWizardComponent } from './stepper-wizard/stepper-wizard.component';
-
+import { LoginComponent } from './login-register/login.component';
+import { RegisterComponent } from './login-register/register.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,8 @@ import { StepperWizardComponent } from './stepper-wizard/stepper-wizard.componen
     CreateUpdateCustomerComponent,
     TreeDynamicDataComponent,
     StepperWizardComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

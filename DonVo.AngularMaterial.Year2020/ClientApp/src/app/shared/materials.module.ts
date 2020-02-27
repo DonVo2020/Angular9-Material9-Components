@@ -17,7 +17,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatStepperModule } from '@angular/material/stepper';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -40,6 +45,11 @@ import {MatSliderModule} from '@angular/material/slider';
     MatProgressBarModule,
     MatStepperModule,
     MatSliderModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatListModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     MatButtonModule,
@@ -60,7 +70,12 @@ import {MatSliderModule} from '@angular/material/slider';
     MatProgressBarModule,
     MatStepperModule,
     MatSliderModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatListModule,
+    MatProgressSpinnerModule,
   ],
-  providers: [],
+  //providers: [],
 })
 export class MaterialsModule { }

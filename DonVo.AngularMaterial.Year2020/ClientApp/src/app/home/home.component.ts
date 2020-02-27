@@ -24,4 +24,7 @@ export class HomeComponent {
   showStepperWizard() {
     this.router.navigate(["stepper-wizard"]);
   }
+  showLogin() {
+    this.router.navigate(["login"]);
+  }
 }
