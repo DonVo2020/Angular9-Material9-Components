@@ -6,6 +6,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FormFieldsComponent } from './form-fields/form-fields.component';
 import { TableCrudModalComponent } from './table-crud-modal/table-crud-modal.component';
 import { TreeDynamicDataComponent } from './tree-dynamic-data/tree-dynamic-data.component';
+import { TreeCheckboxesComponent } from './tree-checkboxes/tree-checkboxes.component';
 import { StepperWizardComponent } from './stepper-wizard/stepper-wizard.component';
 import { LoginComponent } from './login-register/login.component';
 import { RegisterComponent } from './login-register/register.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'form-fields', component: FormFieldsComponent },
   { path: 'table-crud-modal', component: TableCrudModalComponent },
   { path: 'tree-dynamic-data', component: TreeDynamicDataComponent },
+  { path: 'tree-checkboxes', component: TreeCheckboxesComponent },
   { path: 'stepper-wizard', component: StepperWizardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

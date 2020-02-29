@@ -21,6 +21,9 @@ export class HomeComponent {
   showTreeDynamicData() {
     this.router.navigate(["tree-dynamic-data"]);
   }
+  showTreeCheckboxes() {
+    this.router.navigate(["tree-checkboxes"]);
+  }
   showStepperWizard() {
     this.router.navigate(["stepper-wizard"]);
   }

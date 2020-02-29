@@ -20,6 +20,7 @@ import { FormFieldsComponent } from './form-fields/form-fields.component';
 import { TableCrudModalComponent } from './table-crud-modal/table-crud-modal.component';
 import { CreateUpdateCustomerComponent } from './table-crud-modal/create-update-table-crud-modal/create-update-table-crud-modal.component';
 import { TreeDynamicDataComponent } from './tree-dynamic-data/tree-dynamic-data.component';
+import { TreeCheckboxesComponent } from './tree-checkboxes/tree-checkboxes.component';
 import { StepperWizardComponent } from './stepper-wizard/stepper-wizard.component';
 import { LoginComponent } from './login-register/login.component';
 import { RegisterComponent } from './login-register/register.component';
@@ -34,6 +35,7 @@ import { RegisterComponent } from './login-register/register.component';
     TableCrudModalComponent,
     CreateUpdateCustomerComponent,
     TreeDynamicDataComponent,
+    TreeCheckboxesComponent,
     StepperWizardComponent,
     LoginComponent,
     RegisterComponent,
