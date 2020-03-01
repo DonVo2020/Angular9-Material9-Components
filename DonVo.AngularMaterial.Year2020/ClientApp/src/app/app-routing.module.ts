@@ -11,6 +11,8 @@ import { StepperWizardComponent } from './stepper-wizard/stepper-wizard.componen
 import { LoginComponent } from './login-register/login.component';
 import { RegisterComponent } from './login-register/register.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
+import { ChipsAutoCompleteComponent } from './chips-autocomplete/chips-autocomplete.component';
+import { ChipsInputComponent } from './chips-input/chips-input.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'stepper-wizard', component: StepperWizardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'chips-autocomplete', component: ChipsAutoCompleteComponent },
+  { path: 'chips-input', component: ChipsInputComponent },
   { path: 'drag-drop', component: DragDropComponent },
 
 ];

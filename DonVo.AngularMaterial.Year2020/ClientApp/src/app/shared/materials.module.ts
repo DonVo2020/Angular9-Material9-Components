@@ -23,6 +23,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [],
@@ -50,6 +52,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatTooltipModule,
     MatListModule,
     MatProgressSpinnerModule,
+    MatChipsModule,
+    MatAutocompleteModule,
   ],
   exports: [
     MatButtonModule,
@@ -75,6 +79,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatTooltipModule,
     MatListModule,
     MatProgressSpinnerModule,
+    MatChipsModule,
+    MatAutocompleteModule,
   ],
   //providers: [],
 })

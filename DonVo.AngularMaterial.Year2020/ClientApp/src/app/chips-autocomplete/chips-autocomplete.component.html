@@ -1,0 +1,29 @@
+<button mat-raised-button color="primary" [routerLink]="['/']">
+  <mat-icon>arrow_back</mat-icon>Back
+</button>
+<br /><br />
+<mat-card>
+  <mat-form-field class="example-chip-list">
+    <mat-chip-list #chipList aria-label="Book selection">
+      <mat-chip *ngFor="let book of selectedBooks"
+                [selectable]="selectable"
+                [removable]="removable"
+                (removed)="remove(book)">
+        {{book}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input placeholder="New Book..."
+             #bookInput
+             [formControl]="bookCtrl"
+             [matAutocomplete]="auto"
+             [matChipInputFor]="chipList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let book of filteredBooks | async" [value]="book">
+        {{book}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</mat-card>

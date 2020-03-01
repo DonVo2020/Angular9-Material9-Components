@@ -28,9 +28,13 @@
       <mat-icon>category</mat-icon>
       Tree with Checkboxes
     </button>
-    <button mat-raised-button color="primary">
+    <button mat-raised-button color="primary" (click)="showChipsAutoComplete()">
       <mat-icon>filter_list</mat-icon>
       Chips Autocomplete
+    </button>
+    <button mat-raised-button color="primary" (click)="showChipsInput()">
+      <mat-icon>power_input</mat-icon>
+      Chips Input
     </button>
     <button mat-raised-button color="primary" (click)="showDragDrop()">
       <mat-icon>drag_indicator</mat-icon>

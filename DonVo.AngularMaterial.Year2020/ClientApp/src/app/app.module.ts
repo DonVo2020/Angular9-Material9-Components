@@ -29,6 +29,8 @@ import { StepperWizardComponent } from './stepper-wizard/stepper-wizard.componen
 import { LoginComponent } from './login-register/login.component';
 import { RegisterComponent } from './login-register/register.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
+import { ChipsAutoCompleteComponent } from './chips-autocomplete/chips-autocomplete.component';
+import { ChipsInputComponent } from './chips-input/chips-input.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { DragDropComponent } from './drag-drop/drag-drop.component';
     LoginComponent,
     RegisterComponent,
     DragDropComponent,
+    ChipsAutoCompleteComponent,
+    ChipsInputComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

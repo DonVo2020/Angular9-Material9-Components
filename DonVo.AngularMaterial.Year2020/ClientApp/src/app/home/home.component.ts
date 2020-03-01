@@ -33,4 +33,10 @@ export class HomeComponent {
   showDragDrop() {
     this.router.navigate(["drag-drop"]);
   }
+  showChipsAutoComplete() {
+    this.router.navigate(["chips-autocomplete"]);
+  }
+  showChipsInput() {
+    this.router.navigate(["chips-input"]);
+  }
 }
