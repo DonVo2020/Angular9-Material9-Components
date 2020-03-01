@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
+import { DndModule } from 'ng2-dnd';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialsModule } from './shared/materials.module';
@@ -11,6 +14,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { FileUploadModule } from 'ng2-file-upload';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -24,6 +28,7 @@ import { TreeCheckboxesComponent } from './tree-checkboxes/tree-checkboxes.compo
 import { StepperWizardComponent } from './stepper-wizard/stepper-wizard.component';
 import { LoginComponent } from './login-register/login.component';
 import { RegisterComponent } from './login-register/register.component';
+import { DragDropComponent } from './drag-drop/drag-drop.component';
 
 @NgModule({
   declarations: [
@@ -39,12 +44,15 @@ import { RegisterComponent } from './login-register/register.component';
     StepperWizardComponent,
     LoginComponent,
     RegisterComponent,
+    DragDropComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    CommonModule,
+    FlexLayoutModule,
 
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -55,6 +63,7 @@ import { RegisterComponent } from './login-register/register.component';
     FileUploadModule,
     FontAwesomeModule,
     NgxFileDropModule,
+    DndModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -10,6 +10,7 @@ import { TreeCheckboxesComponent } from './tree-checkboxes/tree-checkboxes.compo
 import { StepperWizardComponent } from './stepper-wizard/stepper-wizard.component';
 import { LoginComponent } from './login-register/login.component';
 import { RegisterComponent } from './login-register/register.component';
+import { DragDropComponent } from './drag-drop/drag-drop.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'stepper-wizard', component: StepperWizardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'drag-drop', component: DragDropComponent },
 
 ];
 

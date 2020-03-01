@@ -30,4 +30,7 @@ export class HomeComponent {
   showLogin() {
     this.router.navigate(["login"]);
   }
+  showDragDrop() {
+    this.router.navigate(["drag-drop"]);
+  }
 }
